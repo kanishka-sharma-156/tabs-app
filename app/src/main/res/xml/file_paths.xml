@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Paths the camera app is allowed to write a receipt photo into.
+     Only this one folder is shared, and only for the file we hand over. -->
+<paths>
+    <cache-path
+        name="receipt_images"
+        path="receipts/" />
+    <files-path
+        name="receipt_images_files"
+        path="receipts/" />
+</paths>

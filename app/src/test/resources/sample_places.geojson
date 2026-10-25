@@ -1,0 +1,15 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": { "name": "Sector 17 Plaza" },
+      "geometry": { "type": "Point", "coordinates": [76.778, 30.741] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "name": "Sukhna Lake" },
+      "geometry": { "type": "Point", "coordinates": [76.814, 30.743] }
+    }
+  ]
+}

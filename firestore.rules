@@ -1,0 +1,277 @@
+rules_version = '2';
+
+// ============================================================================
+//  TABS — Firestore security rules
+//
+//  Deploy with:  firebase deploy --only firestore:rules
+//  (or paste into Firebase Console > Firestore Database > Rules > Publish)
+//
+//  Data shape this protects:
+//    users/{uid}                                   profile: uid, email, displayName, username
+//    users/{uid}/friends/{friendUid}               mutual friendship edge
+//    users/{uid}/backups/{docId}                   private cloud backup
+//    friendRequests/{uidA_uidB}                    ONE friend request per pair
+//    emailLookup/{emailLower}                      email -> uid   (uniqueness)
+//    usernames/{usernameLower}                     username -> uid (uniqueness)
+//    spaces/{spaceId}                              DIRECT or GROUP
+//    spaces/{spaceId}/messages/{messageId}         chat + payment cards
+//    spaces/{spaceId}/expenses/{expenseId}         shared expenses
+//    spaces/{spaceId}/settlements/{settlementId}   payments (send / assign)
+//    disputes/{disputeId}                          "tabs court" queries
+//    transit_routes/{routeId}                      travel fares
+// ============================================================================
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // ------------------------------------------------------------------ helpers
+
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function uid() {
+      return request.auth.uid;
+    }
+
+    function isOwner(userId) {
+      return isSignedIn() && uid() == userId;
+    }
+
+    // ------------------------------------------------------------------------
+    // Friend-request document id.
+    //
+    // A request lives at  friendRequests/{senderUid}_{recipientUid}  with NO
+    // sorting, so the id is directly derivable from the document's own fields.
+    //
+    // Both orderings are accepted everywhere below, which makes the pair behave
+    // symmetrically: the sender writes one ordering, the recipient can find it,
+    // and either side can answer or withdraw it.
+    //
+    // This shape is deliberate because the rules compiler:
+    //   * forbids the ternary operator, so no min/max selection is possible, and
+    //   * refuses to concatenate a boolean into a string, so a comparison result
+    //     cannot be smuggled into the id either.
+    // ------------------------------------------------------------------------
+
+    // True when an ACCEPTED friend request exists between these two people,
+    // whichever way round it was written. This is what authorises a friends entry.
+    function friendshipAccepted(uid1, uid2) {
+      return exists(/databases/$(database)/documents/friendRequests/$(uid1 + '_' + uid2))
+             && get(/databases/$(database)/documents/friendRequests/$(uid1 + '_' + uid2)).data.status == 'ACCEPTED'
+             || (exists(/databases/$(database)/documents/friendRequests/$(uid2 + '_' + uid1))
+                 && get(/databases/$(database)/documents/friendRequests/$(uid2 + '_' + uid1)).data.status == 'ACCEPTED');
+    }
+
+    // Safe space-membership check: returns false instead of erroring out when the
+    // space document does not exist yet or cannot be read.
+    function isMemberOfSpace(spaceId) {
+      return isSignedIn()
+             && exists(/databases/$(database)/documents/spaces/$(spaceId))
+             && uid() in get(/databases/$(database)/documents/spaces/$(spaceId)).data.memberUids;
+    }
+
+    // True when we are connected to this person: we have them in our friends list,
+    // they have us in theirs, or a request is in flight either way.
+    function hasRelationship(other) {
+      return exists(/databases/$(database)/documents/users/$(uid())/friends/$(other))
+             || exists(/databases/$(database)/documents/users/$(other)/friends/$(uid()))
+             || exists(/databases/$(database)/documents/friendRequests/$(uid() + '_' + other))
+             || exists(/databases/$(database)/documents/friendRequests/$(other + '_' + uid()));
+    }
+
+    // ================================================================ users
+    // Profiles are NOT public.
+    //
+    // A profile may only be read by:
+    //   * its owner,
+    //   * somebody who is already a friend (either direction),
+    //   * somebody with a friend request in flight, in either direction.
+    //
+    // Listing is denied, so the user base cannot be enumerated. People stay
+    // findable because a search resolves a username or email through the separate
+    // lookup collections, which reveal only a uid.
+    match /users/{userId} {
+      allow get: if isOwner(userId)
+                 || (isSignedIn() && hasRelationship(userId));
+      allow list: if false;
+      allow create, update: if isOwner(userId) && request.resource.data.uid == userId;
+      allow delete: if isOwner(userId);
+
+      // ----------------------------------------------------------------------
+      // Friendship edges. You may only write YOUR OWN list, and only for someone
+      // who actually accepted a request. Each side writes its own edge on accept,
+      // so a one-sided "friendship" is impossible.
+      // ----------------------------------------------------------------------
+      match /friends/{friendUid} {
+        allow read: if isOwner(userId);
+        allow create: if isOwner(userId)
+                      && request.resource.data.friendUid == friendUid
+                      && friendshipAccepted(userId, friendUid);
+        allow update, delete: if isOwner(userId);
+      }
+
+      // Private per-user documents (cloud backups, preferences, tokens).
+      match /backups/{backupId} {
+        allow read, write: if isOwner(userId);
+      }
+
+      match /prefs/{prefId} {
+        allow read, write: if isOwner(userId);
+      }
+    }
+
+    // ===================================================== friend requests
+    // A request lives at friendRequests/{senderUid}_{recipientUid}. Both orderings
+    // are accepted, so the pair is symmetric.
+    //   * either participant may read it, which is how a sender learns it was
+    //     accepted
+    //   * only the sender may create it, and always as PENDING
+    //   * only the recipient may answer it, and only ACCEPTED or DECLINED
+    //   * only the sender may withdraw it
+    match /friendRequests/{requestId} {
+      allow get: if isSignedIn()
+                 && (resource.data.fromUid == uid() || resource.data.toUid == uid());
+
+      // The app queries with exactly one equality filter on its own uid.
+      allow list: if isSignedIn()
+                  && request.query.limit <= 200
+                  && (request.query.filters.toUid == uid()
+                      || request.query.filters.fromUid == uid());
+
+      // The id must be exactly sender_recipient, so one person cannot squat
+      // arbitrary documents in this collection.
+      allow create: if isSignedIn()
+                    && request.resource.data.fromUid == uid()
+                    && request.resource.data.toUid != uid()
+                    && request.resource.data.status == 'PENDING'
+                    && requestId == request.resource.data.fromUid + '_' + request.resource.data.toUid;
+
+      allow update: if isSignedIn()
+                    && resource.data.toUid == uid()
+                    && request.resource.data.status in ['ACCEPTED', 'DECLINED'];
+
+      // Only the sender may withdraw, and only at the id they created.
+      allow delete: if isSignedIn()
+                    && (requestId == uid() + '_' + resource.data.toUid
+                        || requestId == resource.data.toUid + '_' + uid())
+                    && resource.data.fromUid == uid();
+    }
+
+    // ============================================================ lookups
+    // Exact-document reads only. Listing is denied so the user base cannot be
+    // enumerated.
+    //
+    // Create is allowed unless the key is already claimed by somebody else, so a
+    // malicious client cannot "poison" another person's email or username by
+    // rerouting the mapping to itself. That check needs a get() only when the
+    // document already exists.
+    match /emailLookup/{email} {
+      allow get: if isSignedIn();
+      allow list: if false;
+      allow create: if isSignedIn()
+                    && request.resource.data.uid == uid()
+                    && (!exists(/databases/$(database)/documents/emailLookup/$(email))
+                        || get(/databases/$(database)/documents/emailLookup/$(email)).data.uid == uid());
+      allow update: if isSignedIn()
+                    && resource.data.uid == uid()
+                    && request.resource.data.uid == uid();
+      allow delete: if isSignedIn() && resource.data.uid == uid();
+    }
+
+    match /usernames/{username} {
+      allow get: if isSignedIn();
+      allow list: if false;
+      allow create: if isSignedIn()
+                    && request.resource.data.uid == uid()
+                    && (!exists(/databases/$(database)/documents/usernames/$(username))
+                        || get(/databases/$(database)/documents/usernames/$(username)).data.uid == uid());
+      allow update: if isSignedIn()
+                    && resource.data.uid == uid()
+                    && request.resource.data.uid == uid();
+      allow delete: if isSignedIn() && resource.data.uid == uid();
+    }
+
+    // ============================================================= spaces
+    // A DIRECT space is between exactly two people; a GROUP space is a trip or a
+    // shared pool. Both are driven by memberUids.
+    match /spaces/{spaceId} {
+      allow read: if isMemberOfSpace(spaceId);
+      allow create: if isSignedIn()
+                    && uid() in request.resource.data.memberUids
+                    && request.resource.data.memberUids.size() >= 1;
+      allow update: if isMemberOfSpace(spaceId)
+                    && uid() in request.resource.data.memberUids;
+      allow delete: if isMemberOfSpace(spaceId) && uid() == resource.data.leaderUid;
+
+      // ------------------------------------------------------- expenses
+      match /expenses/{expenseId} {
+        allow read: if isMemberOfSpace(spaceId);
+        allow create: if isMemberOfSpace(spaceId)
+                      && request.resource.data.paidByUid is string
+                      && request.resource.data.amountPaise is number;
+        // Any member may adjust a split — this is how a "tabs court" resolution
+        // rewrites shares.
+        allow update: if isMemberOfSpace(spaceId);
+        allow delete: if isMemberOfSpace(spaceId)
+                      && (resource.data.createdBy == uid()
+                          || resource.data.paidByUid == uid());
+      }
+
+      // ------------------------------------------------------- messages
+      match /messages/{messageId} {
+        allow read: if isMemberOfSpace(spaceId);
+        allow create: if isMemberOfSpace(spaceId)
+                      && request.resource.data.senderUid == uid()
+                      && request.resource.data.text is string;
+        allow update, delete: if isMemberOfSpace(spaceId)
+                              && (resource.data.senderUid == uid()
+                                  || uid() == resource.data.toUid);
+      }
+
+      // ---------------------------------------------------- settlements
+      // Anyone in the space may propose a payment. Only the person being paid can
+      // confirm or dispute it; only the payer can withdraw it. This is what makes
+      // "send / assign a payment" real instead of decorative.
+      match /settlements/{settlementId} {
+        allow read: if isMemberOfSpace(spaceId);
+        allow create: if isMemberOfSpace(spaceId)
+                      && request.resource.data.fromUid == uid()
+                      && request.resource.data.amountPaise is number
+                      && request.resource.data.amountPaise > 0;
+        allow update: if isMemberOfSpace(spaceId) && (
+                        uid() == resource.data.toUid
+                        || (uid() == resource.data.fromUid
+                            && request.resource.data.status in ['PENDING', 'CANCELLED'])
+                      );
+        allow delete: if isMemberOfSpace(spaceId) && uid() == resource.data.fromUid;
+      }
+    }
+
+    // ============================================================ disputes
+    match /disputes/{disputeId} {
+      allow read: if isSignedIn() && (
+                    resource.data.raisedByUid == uid()
+                    || isMemberOfSpace(resource.data.spaceId)
+                  );
+      allow create: if isSignedIn()
+                    && request.resource.data.raisedByUid == uid()
+                    && isMemberOfSpace(request.resource.data.spaceId);
+      allow update: if isSignedIn() && isMemberOfSpace(resource.data.spaceId);
+      allow delete: if isSignedIn() && isMemberOfSpace(resource.data.spaceId);
+    }
+
+    // ====================================================== transit routes
+    match /transit_routes/{routeId} {
+      allow read: if isSignedIn();
+      allow create: if isSignedIn() && request.resource.data.createdBy == uid();
+      allow update: if isSignedIn() && resource.data.createdBy == uid();
+      allow delete: if isSignedIn() && resource.data.createdBy == uid();
+    }
+
+    // Everything not matched above is denied.
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

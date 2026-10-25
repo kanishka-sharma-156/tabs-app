@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- TABS Palette -->
+    <color name="bg_cream">#F2EFE4</color>
+    <color name="card_paper">#FDFBF3</color>
+    <color name="ink">#25232B</color>
+    <color name="primary_lime">#B8F04E</color>
+    <color name="accent_pink">#F2A9DD</color>
+    <color name="pop_yellow">#F2C14E</color>
+    <color name="owe_red">#D63A2F</color>
+    <color name="owed_green">#1F9D55</color>
+    <color name="muted_chip">#EAE5D8</color>
+    <color name="text_secondary">#666170</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#25232B</color>
+</resources>

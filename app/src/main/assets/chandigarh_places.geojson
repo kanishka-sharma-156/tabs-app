@@ -1,0 +1,1413 @@
+{
+  "type": "FeatureCollection",
+  "generator": "overpass-turbo",
+  "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.",
+  "timestamp": "2026-10-09T06:09:00Z",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/112439506",
+        "amenity": "marketplace",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.7449447,
+          30.7232791
+        ]
+      },
+      "id": "way/112439506"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/129464036",
+        "building": "yes",
+        "name": "Piccadily Square Mall",
+        "shop": "mall",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.7675899,
+          30.7235216
+        ]
+      },
+      "id": "way/129464036"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/129464056",
+        "highway": "tertiary",
+        "name": "Sector 34 Market Road",
+        "oneway": "yes",
+        "surface": "asphalt",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.7635734,
+          30.7219817
+        ]
+      },
+      "id": "way/129464056"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/129464062",
+        "highway": "tertiary",
+        "name": "Sector 34 Market Road",
+        "oneway": "yes",
+        "surface": "asphalt",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.7634943,
+          30.7219231
+        ]
+      },
+      "id": "way/129464062"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/129473485",
+        "landuse": "retail",
+        "name": "Sector 36 Market",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.7528762,
+          30.7343124
+        ]
+      },
+      "id": "way/129473485"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/129473566",
+        "highway": "tertiary",
+        "lanes": "1",
+        "name": "Sector 38 Market Road",
+        "oneway": "yes",
+        "smoothness": "excellent",
+        "surface": "asphalt",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.7472447,
+          30.7426045
+        ]
+      },
+      "id": "way/129473566"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/129473651",
+        "highway": "tertiary",
+        "lanes": "1",
+        "name": "Sector 38 Market Road",
+        "oneway": "yes",
+        "smoothness": "good",
+        "surface": "asphalt",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.7471414,
+          30.7425335
+        ]
+      },
+      "id": "way/129473651"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/129584358",
+        "amenity": "marketplace",
+        "name": "Sector 19 D",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.7909188,
+          30.7299929
+        ]
+      },
+      "id": "way/129584358"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/129774344",
+        "name": "James Plaza",
+        "tourism": "hotel",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.783681,
+          30.7445577
+        ]
+      },
+      "id": "way/129774344"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/155001418",
+        "amenity": "restaurant",
+        "building": "yes",
+        "name": "PEC Market",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.783149,
+          30.7662872
+        ]
+      },
+      "id": "way/155001418"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/170838737",
+        "amenity": "marketplace",
+        "name": "Inner Market Sector-7",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.8011365,
+          30.7356822
+        ]
+      },
+      "id": "way/170838737"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/172497892",
+        "amenity": "marketplace",
+        "designation": "GOL Market",
+        "name": "GOL Market",
+        "source": "Personally visited",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.7750587,
+          30.7661423
+        ]
+      },
+      "id": "way/172497892"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/174277823",
+        "amenity": "marketplace",
+        "building": "yes",
+        "name": "Sector-8 Inner Market",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.7973587,
+          30.74037
+        ]
+      },
+      "id": "way/174277823"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/174277824",
+        "amenity": "marketplace",
+        "name": "Sector 8 Inner Market",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.7982545,
+          30.7401513
+        ]
+      },
+      "id": "way/174277824"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/174720474",
+        "amenity": "marketplace",
+        "building": "yes",
+        "name": "Sector 9 Showrooms",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.7904185,
+          30.7421656
+        ]
+      },
+      "id": "way/174720474"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/174720475",
+        "amenity": "marketplace",
+        "name": "Inner Market",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.7931611,
+          30.7474931
+        ]
+      },
+      "id": "way/174720475"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/174720476",
+        "amenity": "marketplace",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.7873594,
+          30.7541317
+        ]
+      },
+      "id": "way/174720476"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/174720477",
+        "addr:city": "Chandigarh",
+        "addr:district": "Chandigarh",
+        "addr:housenumber": "Ground floor, Sco no. 53, Madhya Marg, 9D, Sector 9",
+        "addr:postcode": "160009",
+        "addr:street": "Madhya Marg",
+        "amenity": "marketplace",
+        "name": "Avalon Nail Studio",
+        "opening_hours": "mon-sun 10:30 am to 8:30 pm",
+        "operator": "Nail Salon",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.7881024,
+          30.7450426
+        ]
+      },
+      "id": "way/174720477"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/174726216",
+        "amenity": "marketplace",
+        "name": "Showrooms",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.7948481,
+          30.7374858
+        ]
+      },
+      "id": "way/174726216"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/174726217",
+        "amenity": "marketplace",
+        "name": "Showrooms",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.7957333,
+          30.7362801
+        ]
+      },
+      "id": "way/174726217"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/174726218",
+        "addr:city": "Chandigarh",
+        "addr:district": "Chandigarh",
+        "addr:housenumber": "SCO 52 Ground floor",
+        "addr:postcode": "160009",
+        "addr:street": "sector 8",
+        "amenity": "marketplace",
+        "building": "yes",
+        "description": "Amore Luxury Spa is a luxury spa in Chandigarh offering a relaxing and comfortable wellness experience in a calm, elegant setting. We provide professional body massage and spa treatments designed to help you relax,",
+        "mobile": "9988041119",
+        "name": "Amore Luxury Spa",
+        "opening_hours": "MON-SUN 10:00 AM to 11:00 PM",
+        "operator": "Spa",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.79339,
+          30.7391255
+        ]
+      },
+      "id": "way/174726218"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/235389229",
+        "amenity": "marketplace",
+        "building": "yes",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.7921132,
+          30.7400463
+        ]
+      },
+      "id": "way/235389229"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/258067701",
+        "addr:city": "Chandigarh",
+        "addr:postcode": "160020",
+        "addr:street": "Sector 20 D",
+        "landuse": "retail",
+        "name": "Aazaad Market",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.7785894,
+          30.723168
+        ]
+      },
+      "id": "way/258067701"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/260203464",
+        "addr:city": "Chandigarh",
+        "addr:street": "Sector 48-C",
+        "amenity": "marketplace",
+        "landuse": "commercial",
+        "name": "Motor Market",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.7598974,
+          30.6867697
+        ]
+      },
+      "id": "way/260203464"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/260207546",
+        "area": "yes",
+        "building": "yes",
+        "check_date": "2025-02-07",
+        "name": "Market, 47 sector",
+        "shop": "convenience",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.7672884,
+          30.6970586
+        ]
+      },
+      "id": "way/260207546"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/260207729",
+        "area": "yes",
+        "building": "yes",
+        "check_date": "2025-02-07",
+        "name": "Mini Market",
+        "shop": "convenience",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.766755,
+          30.6977538
+        ]
+      },
+      "id": "way/260207729"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/260208110",
+        "area": "yes",
+        "building": "yes",
+        "name": "Mini Market, sector 46",
+        "shop": "convenience",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.7663026,
+          30.6996913
+        ]
+      },
+      "id": "way/260208110"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/260208308",
+        "area": "yes",
+        "building": "yes",
+        "name": "Market,46 sector",
+        "shop": "convenience",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.7649426,
+          30.7004467
+        ]
+      },
+      "id": "way/260208308"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/260208309",
+        "area": "yes",
+        "building": "yes",
+        "name": "Market, sector 46",
+        "shop": "convenience",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.7655852,
+          30.7000089
+        ]
+      },
+      "id": "way/260208309"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/260208310",
+        "area": "yes",
+        "building": "yes",
+        "name": "Mini Market",
+        "shop": "convenience",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.7657896,
+          30.7005031
+        ]
+      },
+      "id": "way/260208310"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/260209344",
+        "amenity": "marketplace",
+        "building": "yes",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.7682736,
+          30.6959054
+        ]
+      },
+      "id": "way/260209344"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/355483205",
+        "amenity": "marketplace",
+        "building": "yes",
+        "name": "Sector 49-A Market",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.7552611,
+          30.697414
+        ]
+      },
+      "id": "way/355483205"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/355483206",
+        "amenity": "marketplace",
+        "building": "yes",
+        "name": "Sector 49-B market",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.7567792,
+          30.6941458
+        ]
+      },
+      "id": "way/355483206"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/469352650",
+        "landuse": "commercial",
+        "name": "Sector 37-C Market",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.7496642,
+          30.7370194
+        ]
+      },
+      "id": "way/469352650"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/469362962",
+        "name": "Panjab University Market",
+        "tourism": "attraction",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.767653,
+          30.755926
+        ]
+      },
+      "id": "way/469362962"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/544678737",
+        "addr:city": "Chandigarh",
+        "addr:housenumber": "178-178A",
+        "addr:postcode": "160002",
+        "addr:street": "Industrial Area Phase - 1",
+        "alt_name": "Elante Mall",
+        "email": "elante.mall@nexusmalls.com",
+        "landuse": "commercial",
+        "name": "Nexus Elante Mall",
+        "opening_hours": "Mo-Su 08:00-23:00",
+        "operator": "Nexus Malls",
+        "phone": "0172-5005000",
+        "shop": "mall",
+        "website": "https://www.nexusmalls.com/nexus-elante",
+        "wikidata": "Q18124551",
+        "wikipedia": "en:Elante Mall",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.8011451,
+          30.7053278
+        ]
+      },
+      "id": "way/544678737"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/575487373",
+        "highway": "tertiary",
+        "name": "Sector 34 Market Road",
+        "oneway": "yes",
+        "surface": "asphalt",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.765858,
+          30.719147
+        ]
+      },
+      "id": "way/575487373"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/616974407",
+        "building": "yes",
+        "name": "Paras Downtown Square Mall",
+        "shop": "mall",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.8220926,
+          30.6603146
+        ]
+      },
+      "id": "way/616974407"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/732508664",
+        "addr:city": "Mohali",
+        "addr:street": "Sector 66",
+        "air_conditioning": "yes",
+        "building": "yes",
+        "name": "Bestech Square",
+        "opening_hours": "Mo-Su 08:00-22:00",
+        "payment:cash": "yes",
+        "payment:credit_cards": "yes",
+        "payment:debit_cards": "yes",
+        "shop": "mall",
+        "toilets": "yes",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.7401984,
+          30.6734723
+        ]
+      },
+      "id": "way/732508664"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/761039333",
+        "building": "retail",
+        "building:levels": "1",
+        "name": "Shopping Complex",
+        "nohousenumber": "yes",
+        "opening_hours": "24/7",
+        "roof:levels": "0",
+        "shop": "mall",
+        "toilets": "no",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.7256205,
+          30.6637876
+        ]
+      },
+      "id": "way/761039333"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/978196212",
+        "landuse": "retail",
+        "name": "Central Plaza",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.6819819,
+          30.6567029
+        ]
+      },
+      "id": "way/978196212"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1024462941",
+        "amenity": "marketplace",
+        "name": "Market sector 2",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.8663989,
+          30.6964351
+        ]
+      },
+      "id": "way/1024462941"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1041060581",
+        "name": "Bijwara Market,Sector 22-C"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.7652011,
+          30.7312008
+        ]
+      },
+      "id": "node/1041060581"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1059051246",
+        "addr:street": "Sector 22-C",
+        "amenity": "marketplace",
+        "name": "Shastri Market",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.7704661,
+          30.7321567
+        ]
+      },
+      "id": "way/1059051246"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1066680583",
+        "building": "yes",
+        "name": "Shalimaar Mall",
+        "shop": "mall",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.8511123,
+          30.702365
+        ]
+      },
+      "id": "way/1066680583"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1151568799",
+        "addr:city": "Chandigarh",
+        "addr:street": "Industrial Area Phase 1",
+        "landuse": "commercial",
+        "name": "Centra Mall",
+        "name:en": "Centra Mall",
+        "operator": "The Uppal Group",
+        "shop": "mall",
+        "website": "https://uppal.co.in/overview.aspx?pid=21&type=0",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.7966158,
+          30.7068939
+        ]
+      },
+      "id": "way/1151568799"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1215040816",
+        "highway": "tertiary",
+        "name": "Sector 34 Market Road",
+        "oneway": "yes",
+        "surface": "asphalt",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.7628944,
+          30.7226543
+        ]
+      },
+      "id": "way/1215040816"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1425386472",
+        "amenity": "marketplace",
+        "name": "Furniture Market Chandigarh"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.7319336,
+          30.7259118
+        ]
+      },
+      "id": "node/1425386472"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1427919216",
+        "amenity": "marketplace",
+        "name": "Sector 37A Market",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.7482232,
+          30.7402468
+        ]
+      },
+      "id": "way/1427919216"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1427919223",
+        "amenity": "marketplace",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.7484812,
+          30.7383618
+        ]
+      },
+      "id": "way/1427919223"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1531386623",
+        "building": "yes",
+        "name": "CP67 Mall",
+        "shop": "mall",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.7231022,
+          30.6781054
+        ]
+      },
+      "id": "way/1531386623"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1544864705",
+        "amenity": "restaurant",
+        "building": "yes",
+        "name": "Night street food market",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.8532122,
+          30.7021605
+        ]
+      },
+      "id": "way/1544864705"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1819784688",
+        "amenity": "marketplace"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.7901931,
+          30.71209
+        ]
+      },
+      "id": "node/1819784688"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1828334875",
+        "amenity": "marketplace"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.8032373,
+          30.7329145
+        ]
+      },
+      "id": "node/1828334875"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1828337666",
+        "amenity": "marketplace"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.8032861,
+          30.7282429
+        ]
+      },
+      "id": "node/1828337666"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1828337667",
+        "amenity": "marketplace"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.8056893,
+          30.7256426
+        ]
+      },
+      "id": "node/1828337667"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1843557563",
+        "amenity": "marketplace"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.7728708,
+          30.730867
+        ]
+      },
+      "id": "node/1843557563"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2210742468",
+        "addr:housename": "Aggarwal Stores",
+        "name": "Mini Market, Sector 39 B",
+        "shop": "convenience",
+        "source": "Survey"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.7339803,
+          30.7437855
+        ]
+      },
+      "id": "node/2210742468"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3482140430",
+        "addr:city": "Chandigarh",
+        "addr:postcode": "160014",
+        "addr:street": "Sector 38 West",
+        "name": "Mini Market"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.7375477,
+          30.7504165
+        ]
+      },
+      "id": "node/3482140430"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3810078046",
+        "amenity": "marketplace",
+        "name": "Electronic Market"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.78722,
+          30.7339558
+        ]
+      },
+      "id": "node/3810078046"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4723898594",
+        "name": "Azaad market",
+        "name:en": "Azaad market",
+        "shop": "supermarket"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.7786391,
+          30.7234948
+        ]
+      },
+      "id": "node/4723898594"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5832508181",
+        "name": "Golden Plaza",
+        "tourism": "hotel"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.8218082,
+          30.6608695
+        ]
+      },
+      "id": "node/5832508181"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5849007687",
+        "addr:street": "New Ekta Market, Shop 7, 1st floor",
+        "amenity": "car_rental",
+        "name": "New Ekta Market, Shop 7, 1st floor. Horizon off road",
+        "name:en": "Horizon Off Road"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.7575924,
+          30.7072837
+        ]
+      },
+      "id": "node/5849007687"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6973949076",
+        "name": "Gift Super Market",
+        "shop": "supermarket"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.788724,
+          30.7324809
+        ]
+      },
+      "id": "node/6973949076"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7174960957",
+        "addr:city": "Sahibzada Ajit Singh Nagar",
+        "addr:housenumber": "E331, Industrial Area,",
+        "addr:postcode": "160057",
+        "addr:street": "Sector 74,",
+        "name": "Foster Supermarket",
+        "opening_hours": "24/7",
+        "payment:american_express": "yes",
+        "payment:cash": "yes",
+        "payment:credit_cards": "yes",
+        "payment:debit_cards": "yes",
+        "shop": "supermarket",
+        "website": "https://www.fostersupermarket.com/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.683928,
+          30.7088138
+        ]
+      },
+      "id": "node/7174960957"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7272148953",
+        "name": "City Plaza 17",
+        "tourism": "hotel"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.7833965,
+          30.7389396
+        ]
+      },
+      "id": "node/7272148953"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8940414325",
+        "amenity": "marketplace",
+        "name": "Mat makers Market Bamboo"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.771363,
+          30.7304359
+        ]
+      },
+      "id": "node/8940414325"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9105517917",
+        "addr:street": "Dakshin Marg",
+        "email": "info@hoteldiamondplaza.com",
+        "name": "Hotel Diamond Plaza",
+        "phone": "+919216333000",
+        "tourism": "hotel",
+        "website": "https://hoteldiamondplaza.com/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.7671187,
+          30.7284033
+        ]
+      },
+      "id": "node/9105517917"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9999552115",
+        "name": "Shoe Plaza",
+        "shop": "shoes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.8455891,
+          30.6831675
+        ]
+      },
+      "id": "node/9999552115"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10284285108",
+        "name": "JS Wholesale Supermarket",
+        "shop": "supermarket"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.8856526,
+          30.6698305
+        ]
+      },
+      "id": "node/10284285108"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10290610455",
+        "addr:city": "Panchkula",
+        "addr:housenumber": "DSS 172",
+        "addr:postcode": "134116",
+        "addr:street": "Sector 25",
+        "name": "Needs Supermarket",
+        "shop": "supermarket"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.8845046,
+          30.6697733
+        ]
+      },
+      "id": "node/10290610455"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10290610460",
+        "addr:city": "Panchkula",
+        "addr:housenumber": "DSS 178",
+        "addr:postcode": "134116",
+        "addr:street": "Sector 25",
+        "name": "A to Z Supermarket",
+        "shop": "supermarket"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.8841597,
+          30.6697826
+        ]
+      },
+      "id": "node/10290610460"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10292521598",
+        "addr:city": "Panchkula",
+        "addr:housenumber": "DSS 111",
+        "addr:postcode": "134116",
+        "addr:street": "Sector 26",
+        "name": "amb Supermarket",
+        "shop": "supermarket"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.8814819,
+          30.6621108
+        ]
+      },
+      "id": "node/10292521598"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11118097437",
+        "addr:city": "Panchkula",
+        "addr:place": "Sector 10",
+        "name": "GP Super Market",
+        "shop": "supermarket"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.8513598,
+          30.6918247
+        ]
+      },
+      "id": "node/11118097437"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12597190401",
+        "addr:city": "Chandigarh",
+        "addr:district": "Chandigarh",
+        "addr:housenumber": "SCO 1004, Sector 22B, Sector 17, Chandigarh, 160022",
+        "addr:postcode": "160022",
+        "addr:street": "Udyog Path",
+        "name": "Sweety Mobile Market",
+        "shop": "mobile_phone"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.7768728,
+          30.7359965
+        ]
+      },
+      "id": "node/12597190401"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13344336784",
+        "addr:city": "Chandigarh",
+        "addr:district": "Chandigarh",
+        "addr:housenumber": "SCO 144-145, LEVEL 1",
+        "addr:postcode": "160022",
+        "addr:street": "Sector 34 A",
+        "name": "Epilogue : Digital Marketing & Advertising Agency",
+        "office": "advertising_agency",
+        "opening_hours": "Mo-Fr 10:00-19:00",
+        "phone": "0172 419 0760",
+        "website": "https://epilogue.co.in/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.7700221,
+          30.721764
+        ]
+      },
+      "id": "node/13344336784"
+    }
+  ]
+}
